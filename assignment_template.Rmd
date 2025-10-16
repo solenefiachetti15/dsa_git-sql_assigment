@@ -92,7 +92,22 @@ dbDisconnect(con)
 
 ---
 
-## Step 7: Commit and Push Your work Using RStudio
+## Step 7: Generate a Personal Access Token(PAT)
+
+First, you need to create a PAT on the GitHub website:
+    - Log in to your GitHub account. If you don't have one create one.
+    - Go to Settings by clicking your profile picture in the top-right corner.
+    - In the left sidebar, scroll down and click Developer settings.
+    - Click Personal access tokens, then select Tokens (classic).
+    - Click Generate new token.
+    - Give the token a descriptive Note .
+    - Set an Expiration date. 30 days is a good starting point.
+    - Under Select scopes, check the box next to repo. This grants permissions for full control of private repositories.
+    - Scroll to the bottom and click Generate token.
+
+---
+
+## Step 8: Commit and Push Your work Using RStudio
 1. In the Git pane, check the box next to your .Rmd file.
 2. Click Commit.
 3. Enter a commit message (e.g., “Completed assignment by <your_student_id>”).
