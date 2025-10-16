@@ -1,0 +1,108 @@
+
+---
+title: "Git & SQL Practical Assignment"
+author: "Student Name"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Assignment Overview
+
+This assignment guides you through using Git and SQL in RStudio. You will clone a repository, work with a SQLite database, and use RStudio's Git interface to manage your work.
+
+---
+
+## Step 1: Clone the Repository Using RStudio
+
+1. Open RStudio.
+2. Go to **File** → **New Project** → **Version Control** → **Git**.
+3. Paste the repository URL provided by your instructor.
+4. Choose a local folder and click **Create Project**.
+
+---
+
+## Step 2: Copy the R Markdown Template
+
+1. In the **Files** pane, locate `assignment_template.Rmd`.
+2. Right-click and select **Copy**.
+3. Rename the copy to `assignment_<your_student_id>.Rmd` (replace `<your_student_id>` with your actual ID).
+
+---
+
+## Step 3: Open Your Rmd File
+
+Double-click your new `.Rmd` file to open it in the editor.
+
+---
+
+## Step 4: Connect to the SQLite Database
+
+```{r setup, message=FALSE}
+library(DBI)
+library(RSQLite)
+con <- dbConnect(RSQLite::SQLite(), "output_database.sqlite")
+```
+
+---
+
+## Step 5: Perform SQL Queries
+a. List all tables in the database
+
+```{r}
+
+dbListTables(con)
+
+```
+
+b. Show the first 5 rows o a table
+
+```{r}
+
+dbGetQuery(con, "SELECT * FROM mortality_clean LIMIT 5;")
+
+```
+
+c. Count the number of records in another table 
+
+```{r}
+
+dbGetQuery(con, "SELECT COUNT(*) FROM demographics_clean;")
+
+```
+d. Join two tables and display the first 5 results
+
+```{r}
+
+
+# dbGetQuery(con, "
+#   SELECT Patients.PatientID, Name, Diagnosis
+#   FROM Patients
+#   JOIN Diagnoses ON Patients.PatientID = Diagnoses.PatientID
+#   LIMIT 5;
+# ")
+
+
+```
+
+
+---
+
+## Step 6: Disconnect from the Database
+```{r}
+
+dbDisconnect(con)
+
+```
+
+---
+
+## Step 7: Commit and Push Your work Using RStudio
+1. In the Git pane, check the box next to your .Rmd file.
+2. Click Commit.
+3. Enter a commit message (e.g., “Completed assignment by <your_student_id>”).
+4. Click Commit.
+5. Click Push to upload your changes to the remote repository.
+
+
+
