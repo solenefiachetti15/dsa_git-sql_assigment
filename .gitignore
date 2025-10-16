@@ -47,3 +47,5 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+assignment_soultions.Rmd
+.DS_Store

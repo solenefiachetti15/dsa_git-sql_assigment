@@ -26,7 +26,7 @@ This assignment guides you through using Git and SQL in RStudio. You will clone 
 
 1. In the **Files** pane, locate `assignment_template.Rmd`.
 2. Right-click and select **Copy**.
-3. Rename the copy to `assignment_<your_student_id>.Rmd` (replace `<your_student_id>` with your actual ID).
+3. Rename the copy to `assignment_<your_student_name>.Rmd` (replace `<your_student_name>` with your actual name).
 
 ---
 
@@ -41,7 +41,7 @@ Double-click your new `.Rmd` file to open it in the editor.
 ```{r setup, message=FALSE}
 library(DBI)
 library(RSQLite)
-con <- dbConnect(RSQLite::SQLite(), "output_database.sqlite")
+con <- dbConnect(RSQLite::SQLite(), "data/dsa_practical_db.sqlite")
 ```
 
 ---
@@ -59,7 +59,7 @@ b. Show the first 5 rows o a table
 
 ```{r}
 
-dbGetQuery(con, "SELECT * FROM mortality_clean LIMIT 5;")
+dbGetQuery(con, "<QUERY HERE>")
 
 ```
 
@@ -67,7 +67,7 @@ c. Count the number of records in another table
 
 ```{r}
 
-dbGetQuery(con, "SELECT COUNT(*) FROM demographics_clean;")
+dbGetQuery(con, "<QUERY HERE>")
 
 ```
 d. Join two tables and display the first 5 results
@@ -75,12 +75,7 @@ d. Join two tables and display the first 5 results
 ```{r}
 
 
-# dbGetQuery(con, "
-#   SELECT Patients.PatientID, Name, Diagnosis
-#   FROM Patients
-#   JOIN Diagnoses ON Patients.PatientID = Diagnoses.PatientID
-#   LIMIT 5;
-# ")
+dbGetQuery(con, "<QUERY HERE>")
 
 
 ```
