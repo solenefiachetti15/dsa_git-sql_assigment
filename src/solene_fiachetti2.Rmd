@@ -62,13 +62,13 @@ b. Show the first 5 rows o a table
 dbGetQuery(con, "SELECT * FROM mortality_clean LIMIT 5;")
 
 ```
-
+ 
 c. Count the number of records in another table 
 
 ```{r}
 
 dbGetQuery(con, "SELECT COUNT(*) FROM demographics_clean;")
-
+ 
 ```
 d. Join two tables and display the first 5 results
 
